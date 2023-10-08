@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div id="player" class="player">
+        <video id="video" src="videos/video-01.mp4"></video>
+        <div id="controls" class="controls">
+            <div id="progress-bar" class="progress-bar">
+                <span id="progress" class="progress"></span>
+            </div>
+            <div class="btns">
+                <div>
+                    <i id="mute" class="fa-solid fa-volume-high"></i>
+                    <input id="volume-range" type="range" step=".01" min="0" max="1" value="1">
+                    <div class="video-timing">
+                        <span id="time" class="time">00:00:00</span> / <span id="duration"
+                            class="duration">00:00:00</span>
+                    </div>
+                </div>
+                <div>
+                    <i id="skip-backward" class="fa-solid fa-backward"></i>
+                    <i id="play-pause" class="fa-solid fa-play"></i>
+                    <i id="skip-forward" class="fa-solid fa-forward"></i>
+                </div>
+                <div>
+                    <div class="speed-wrapper">
+                        <i id="speed" class="fa-solid fa-gauge"></i>
+                        <ul id="speed-options" class="speed-options">
+                            <li speed="2">2X</li>
+                            <li speed="1.5">1.5X</li>
+                            <li speed="1" class="active">Normal</li>
+                            <li speed="0.75">0.75X</li>
+                            <li speed="0.5">0.5X</li>
+                        </ul>
+                    </div>
+                    <i id="picture-in-picture" class="fa-regular fa-images"></i>
+                    <i id="maximize-minimize" class="fa-solid fa-expand"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

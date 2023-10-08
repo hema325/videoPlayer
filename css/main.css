@@ -1,0 +1,179 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #e3f2fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    caret-color: transparent;
+    padding: 20px;
+}
+
+.player {
+    width: 100vw;
+    max-height: 100%;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.player video {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.player .controls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), transparent);
+    opacity: 1;
+    transition: transform, opacity, 600ms;
+}
+
+.player .controls.hide {
+    transform: translatey(100%);
+    opacity: 0;
+}
+
+.player .controls .progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #99a6ac;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.player .controls .progress-bar .progress {
+    display: block;
+    width: 0%;
+    height: 100%;
+    background-color: #2289ff;
+    border-radius: inherit;
+    position: relative;
+}
+
+.player .controls .progress-bar .progress:before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background-color: inherit;
+    border-radius: 50%;
+    position: absolute;
+    right: -7px;
+    top: calc(50% - 7px);
+    transform: scale(0);
+    transition: transform 400ms;
+}
+
+.player .controls .progress-bar:hover .progress:before {
+    transform: scale(1);
+}
+
+.player .controls .btns {
+    margin: 10px;
+    margin-bottom: 0;
+    height: 35px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.player .controls .btns>div {
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.player .controls .btns>div .video-timing {
+    margin-left: 10px;
+}
+
+.player .controls .btns>div i {
+    width: 17px;
+    font-size: 17px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.player .controls .btns>div:nth-child(1) {
+    left: 0px;
+    gap: 10px;
+}
+
+.player .controls .btns>div:nth-child(2) {
+    left: 50%;
+    transform: translatex(-50%);
+    gap: 20px;
+}
+
+.player .controls .btns>div:nth-child(3) {
+    right: 0px;
+    gap: 20px;
+}
+
+.player .controls .btns div input[type=range] {
+    width: 80px;
+    height: 4px;
+    accent-color: #1b82f8;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.player .controls .btns div input[type=range]::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background-color: #2289ff;
+    border-radius: 50%;
+}
+
+.player .controls .btns .speed-wrapper {
+    position: relative;
+}
+
+.player .controls .btns .speed-wrapper .speed-options {
+    min-width: 120px;
+    color: #000;
+    background-color: #eef3f3;
+    border-radius: 5px;
+    list-style-type: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    right: 0;
+    overflow: hidden;
+    transform: scale(.95);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity, transform, 400ms;
+}
+
+.player .controls .btns .speed-wrapper .speed-options.active {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+.player .controls .btns .speed-wrapper .speed-options li {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.player .controls .btns .speed-wrapper .speed-options li:hover {
+    background-color: #e2e3e4;
+}
+
+.player .controls .btns .speed-wrapper .speed-options li.active {
+    background-color: #2289ff;
+    color: #fff;
+}
